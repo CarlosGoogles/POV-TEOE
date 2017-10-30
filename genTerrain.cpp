@@ -17,7 +17,7 @@ typedef long long ll;
 typedef pair<int, int> ii;
 typedef vector<int> vi;
 
-#define DIV 1.0
+#define SCALE 1.0
 #define MAXN 100
 #define MOD 1000000007
 
@@ -26,18 +26,18 @@ long double triplete[MAXN][MAXN][MAXN];
 int n, m;
 
 void genPoints1(int i, int j) {
-    double ii = ((double)(i)) / DIV, jj = (double)(j) / DIV;
+    double ii = ((double)(i)) * SCALE, jj = (double)(j) * SCALE;
     cout << "\t\t<" << ii << ", " << height[i][j] << ", " << jj << "> ";
-    cout << "<" << ii << ", " << height[i][j+1] << ", " << jj+1 << "> ";
-    cout << "<" << ii+1 << ", " << height[i+1][j] << ", " << jj << "> ";
+    cout << "<" << ii << ", " << height[i][j+1] << ", " << jj+SCALE << "> ";
+    cout << "<" << ii+SCALE << ", " << height[i+1][j] << ", " << jj << "> ";
     cout << endl;
 }
 
 void genPoints2(int i, int j) {
-    double ii = ((double)(i)) / DIV, jj = (double)(j) / DIV;
-    cout << "\t\t<" << ii << ", " << height[i][j+1] << ", " << jj+1 << "> ";
-    cout << "<" << ii+1 << ", " << height[i+1][j+1] << ", " << jj+1 << "> ";
-    cout << "<" << ii+1 << ", " << height[i+1][j] << ", " << jj << "> ";
+    double ii = ((double)(i)) * SCALE, jj = (double)(j) * SCALE;
+    cout << "\t\t<" << ii << ", " << height[i][j+1] << ", " << jj+SCALE << "> ";
+    cout << "<" << ii+SCALE << ", " << height[i+1][j+1] << ", " << jj+SCALE << "> ";
+    cout << "<" << ii+SCALE << ", " << height[i+1][j] << ", " << jj << "> ";
     cout << endl;
 }
 
