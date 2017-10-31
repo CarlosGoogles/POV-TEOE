@@ -1,6 +1,7 @@
 #include "functions.inc"
 #include "colors.inc"
-#include "terrain_sand.inc"
+#include "terrain_sand.inc" 
+#include "terrain_mountain_1.inc"
 #include "texturas.inc"
 
 camera {
@@ -12,51 +13,35 @@ camera {
 light_source { <7, 3.4, 0>*1.1 1.0 }  
 light_source { <-5, 5, 30>*1.1 0.2 }   
 
+
+//Esfera que representa el cielo, con gradiente
 sphere { 
-    <0,0,0>,1 hollow    //keep attention: keep sun lower than sky
+    <0,0,0>,1
     texture { 
         pigment { 
             gradient <0,1,0>
             color_map {
-                [0.001 color Red *0.3 ]                                 
-                [0.17  color rgb<0,0,0.4>*0.4 ]
-                [0.9   color rgb<0,0,0> ]                   
-                //[0.8 color rgb<0.1,0.25,0.75> ]
-                //[1.0 color rgb<0.1,0.25,0.75> ]
+                [0.001 color Red *0.3 ]             // Color Rojo                         
+                [0.17  color rgb<0,0,0.4>*0.4 ]     // Color Azul
+                [0.7   color rgb<0,0,0> ]           // Color Negro
             }
         }
-        #if (version = 3.7 )  finish { emission 1 diffuse -1 }
-        #else                 finish { ambient 1 diffuse 1 }
-        #end 
+        
+        finish { emission 1 diffuse -1 }
     }
     scale 10000
 }
-//translate<1,1,1>
-    
-sphere {
-    <-430, 100, -225>, 1
-    texture {
-        pigment { rgbt <1, 0.5, 1, 0> }
-        finish {
-            //diffuse 0.3
-            //ambient 0.1
-            reflection 0
-            phong 0
-        }
-    }
-    translate <0, 0, 0>
-}
-
+   
+//Crear 200 esferas en posiciones random
 #local i = 0;
-#declare firstSeed = seed(63981);
-    #while (i < 150)
+#declare firstSeed = seed(150);
+    #while (i < 200)
       
-        #declare randomNumber1 = (int(rand(firstSeed)*800) + 200) *-1;
-        #declare randomNumber2 = (int(rand(firstSeed)*800) + 200) *-1;
+        #declare randomNumber1 = (int(rand(firstSeed)*(900)) + 100) *-1;
+        #declare randomNumber2 = (int(rand(firstSeed)*(900)) + 100) *-1;
         sphere {
             <randomNumber1, 300, randomNumber2>, 1
             texture { T_Stars }
-            translate <0, 0, 0>
         }
         #local i = i + 1;
     
@@ -156,4 +141,13 @@ difference {
     object { O_Sand }
     translate <-10, 0, -2>  
     rotate <0, 45, 0>
-}          
+}                 
+
+
+// Mountain
+difference {    
+    object { O_Mountain_1 }
+    translate <0, -15, -500>
+    scale <5, 2, 1>  
+    rotate <0, 45, 0>
+}            

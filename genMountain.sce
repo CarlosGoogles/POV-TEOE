@@ -45,11 +45,11 @@ function main()
     mat(tamano, tamano) = input("(" + string(tamano) + ", " + string(tamano) + ")=")
     */
     
-    n = 8
+    n = 6
     tamano = 2^n + 1
     mat = zeros(tamano, tamano)
     smooth = 0.10
-    amplitude = 10
+    amplitude = 500000
     
     mat(1, 1) = 1.0
     mat(1, tamano) = 1.0
@@ -61,7 +61,16 @@ function main()
     mat = llena(n, 1, tamano, 1, tamano, mat, smooth, amplitude)
     
     surf(mat, mat)
-    disp(mat)
+    
+    fd = mopen('matrix_mountain_1.in','wt');
+    mfprintf(fd, '%d %d\n', tamano, tamano);
+    for i=1: tamano
+        for j=1: tamano
+            mfprintf(fd, '%f ', mat(i,j));
+        end
+        mfprintf(fd, '\n');
+    end
+    mclose(fd);
 
 endfunction
 

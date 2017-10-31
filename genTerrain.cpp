@@ -18,7 +18,7 @@ typedef pair<int, int> ii;
 typedef vector<int> vi;
 
 #define SCALE 1.0
-#define MAXN 500
+#define MAXN 400
 #define MOD 1000000007
 
 long double height[MAXN][MAXN];
@@ -41,20 +41,20 @@ void genPoints2(int i, int j) {
     cout << endl;
 }
 
-void solve() {
+void solve(string sObject, string sTexture) {
     cout << "#include \"texturas.inc\"" << endl << endl;
-    cout << "#declare O_Sand = merge {"  << endl;
+    cout << "#declare " << sObject << " = merge {"  << endl;
     FOR(i, 0, n-1) {
         FOR(j, 0, m-1) {
             cout << "\ttriangle {" << endl;
             genPoints1(i, j);
-            cout << "\t\ttexture {T_Sand}" << endl;
+            cout << "\t\ttexture { " << sTexture << " }" << endl;
             cout << "\t}" << endl;
             cout << endl;
 
             cout << "\ttriangle {" << endl;
             genPoints2(i, j);
-            cout << "\t\ttexture {T_Sand}" << endl;
+            cout << "\t\ttexture { " << sTexture << " }" << endl;
             cout << "\t}" << endl;
             cout << endl;
         }
@@ -69,12 +69,11 @@ int main() { _
     freopen((sNombre + ".in").c_str(), "r", stdin);
     freopen((sNombre + ".inc").c_str(), "w", stdout);
     */
+
+    /*
     freopen("matrix_sand.in", "r", stdin);
     freopen("terrain_sand.inc", "w", stdout);
     cout << fixed << setprecision(5) << endl;
-
-
-
     cin >> n >> m;
     FOR(i, 0, n) {
         FOR(j, 0, m) {
@@ -82,8 +81,21 @@ int main() { _
             height[i][j] /= 25.0;
         }
     }
+    solve("O_Sand", "T_Sand");
+    */
 
-    solve();
+
+    freopen("matrix_mountain_1.in", "r", stdin);
+    freopen("terrain_mountain_1.inc", "w", stdout);
+    cout << fixed << setprecision(5) << endl;
+    cin >> n >> m;
+    FOR(i, 0, n) {
+        FOR(j, 0, m) {
+            cin >> height[i][j];
+            height[i][j] /= 25.0;
+        }
+    }
+    solve("O_Mountain_1", "T_Sand");
 
     return 0;
 }
