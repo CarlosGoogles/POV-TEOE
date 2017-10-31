@@ -18,7 +18,7 @@ typedef pair<int, int> ii;
 typedef vector<int> vi;
 
 #define SCALE 1.0
-#define MAXN 100
+#define MAXN 500
 #define MOD 1000000007
 
 long double height[MAXN][MAXN];

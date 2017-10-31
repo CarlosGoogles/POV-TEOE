@@ -45,7 +45,7 @@ function main()
     mat(tamano, tamano) = input("(" + string(tamano) + ", " + string(tamano) + ")=")
     */
     
-    n = 7
+    n = 8
     tamano = 2^n + 1
     mat = zeros(tamano, tamano)
     smooth = 0.10
