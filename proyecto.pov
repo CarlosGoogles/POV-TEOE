@@ -3,15 +3,32 @@
 #include "terrain_sand.inc" 
 #include "terrain_mountain_1.inc"
 #include "texturas.inc"
-
+#include "textures.inc"
+//camara 1
 camera {
     location  <10, 3, 8.5>
     look_at   <1, 5, 1>
+} 
+
+//camara 2
+/*camera {
+    location  <-70,10,-30>
+    look_at   <-10,-30, 1>
+    rotate <0,0,0>
+} */ 
+
+
+// camara sin importancia
+/*
+camera {
+    location  <10, 10, 8.5>
+    look_at   <1, 5, 1>
 }
+*/
 
 
-light_source { <7, 3.4, 0>*1.1 1.0 }  
-light_source { <-5, 5, 30>*1.1 0.2 }   
+//light_source { <-700, 15, -600>*1.1 1.0 }  
+//light_source { <-5, 5, 30>*1.1 0.2 }   
 
 
 //Esfera que representa el cielo, con gradiente
@@ -31,6 +48,20 @@ sphere {
     }
     scale 10000
 }
+
+//Fractal en lugar de la cara de la imagen
+sphere {
+    <0, 0, 0>, 350
+    texture {
+        pigment { color White }
+        finish {
+            diffuse 0.3
+            ambient 0.6
+        }
+    }
+    translate <-700, 15, -600>
+    //translate <0, 1, 0>
+}
    
 //Crear 200 esferas en posiciones random
 #local i = 0;
@@ -47,16 +78,14 @@ sphere {
     
     #end
 
-
-plane {
+// Agua
+// Código sacado de http://www.f-lohmueller.de/pov_tut/backgrnd/p_wat1.htm
+ plane {
     y, 0.0
-    material {
-        texture { T_Water }
-        interior { ior 1.3 }
+    material {   
+        texture{ T_Water}
     }
-    translate <0, 0,  0>
-} 
-
+}  
   
 
 // Edificio 1 de izquierda a derecha
