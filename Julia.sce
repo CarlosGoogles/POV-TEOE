@@ -13,7 +13,7 @@ function CANT = doJulia(xsize, ysize, iterations, cr, ci)
     for k=0: iterations
         for i=1: xsize
             for j=1: ysize
-                if (Z(i, j, 1) ^ 2 + Z(i, j, 2) ^ 2 < 4) then
+                if (Z(i, j, 1) ^ 2 + Z(i, j, 2) ^ 2 <= 4) then
                     a = Z(i, j, 1) ^ 2 - Z(i, j, 2) ^ 2
                     b = 2.0 * Z(i, j, 1) * Z(i, j, 2)
                     Z(i, j, 1) = a + cr
@@ -25,6 +25,7 @@ function CANT = doJulia(xsize, ysize, iterations, cr, ci)
     end
 endfunction
 
+// https://wiki.scilab.org/MandelbrotSet-NaiveVsVectorized
 function plotFractal(R,cmax)
     f=scf();
     f.color_map = jetcolormap(cmax);
@@ -39,10 +40,10 @@ function plotFractal(R,cmax)
 endfunction
 
 function main()
-    xsize = 256;
-    ysize = 256;
+    xsize = 720;
+    ysize = 720;
     
-    iterations = 200;
+    iterations = 512;
     
     cr = -0.8
     ci = 0.156
@@ -54,7 +55,7 @@ function main()
     mprintf("Time = %f (s)\n",t);
     PPS = floor(xsize*ysize/t);
     mprintf("PPS = %d\n",PPS);
-    plotFractal(R,1000);
+    plotFractal(R, 1024);
 endfunction
 
 // Execute main
