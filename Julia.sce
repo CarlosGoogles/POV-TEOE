@@ -40,10 +40,10 @@ function plotFractal(R,cmax)
 endfunction
 
 function main()
-    xsize = 720;
-    ysize = 720;
+    xsize = 1200;
+    ysize = 1200;
     
-    iterations = 512;
+    iterations = 720;
     
     cr = -0.8
     ci = 0.156

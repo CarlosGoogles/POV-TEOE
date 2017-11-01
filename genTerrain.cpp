@@ -70,8 +70,8 @@ int main() { _
     freopen((sNombre + ".inc").c_str(), "w", stdout);
     */
 
-    /*
-    freopen("matrix_sand.in", "r", stdin);
+
+    freopen("Matrix_Sand_2.in", "r", stdin);
     freopen("terrain_sand.inc", "w", stdout);
     cout << fixed << setprecision(5) << endl;
     cin >> n >> m;
@@ -82,9 +82,8 @@ int main() { _
         }
     }
     solve("O_Sand", "T_Sand");
-    */
 
-
+    /*
     freopen("matrix_mountain_1.in", "r", stdin);
     freopen("terrain_mountain_1.inc", "w", stdout);
     cout << fixed << setprecision(5) << endl;
@@ -96,7 +95,7 @@ int main() { _
         }
     }
     solve("O_Mountain_1", "T_Sand");
-
+    */
     return 0;
 }
 

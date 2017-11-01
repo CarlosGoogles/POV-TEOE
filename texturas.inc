@@ -5,7 +5,7 @@
     { 
         image_map
         { 
-            png "Fractal-1-1.png"
+            png "Fractal-2-2.png"
             map_type 5  
             interpolate 4
         }
@@ -31,15 +31,15 @@
 }
 
 #declare T_Water = texture{ 
-			Polished_Chrome 
+            Polished_Chrome 
             normal{ crackle 0.15
             scale 0.75
             turbulence 0.3
             translate<-1,0,5>
           } 
         finish { ambient 0.15 diffuse 0.75 
-                       brilliance 6.0 phong 0.8 phong_size 120
-                       reflection 0.6 }
+                      brilliance 6.0 phong 0.8 phong_size 120
+                      reflection 0.6 }
       
 }
 
