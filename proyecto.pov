@@ -51,13 +51,8 @@ sphere {
 //Fractal en lugar de la cara de la imagen
 sphere {
     <0, 0, 0>, 350
-    texture {
-        pigment { color White }
-        finish {
-            diffuse 0.3
-            ambient 0.6
-        }
-    }
+    texture { T_Fractal }
+    rotate <-40,10,0>
     translate <-700, 15, -600>
     //translate <0, 1, 0>
 }

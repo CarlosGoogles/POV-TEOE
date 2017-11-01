@@ -1,5 +1,17 @@
 #include "textures.inc"
 
+#declare T_Fractal = texture {
+	pigment
+    { 
+        image_map
+        { 
+            png "Fractal-1-1.png"
+            map_type 5  
+            interpolate 4
+        }
+    }
+}
+
 #declare T_Sand = texture {
     pigment {
          rgbt <0.99, 1, 0.63>    
