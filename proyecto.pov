@@ -7,30 +7,31 @@
 #include "textures.inc"   
 
 #include "palm-shinji.inc"
-
-//camara 1
+  
+  /*
+// camara 1
 camera {
     location  <10, 3, 8.5>
     look_at   <1, 5, 1>
-}
-
-//camara 2
-/*camera {
-    location  <-70,10,-30>
-    look_at   <-10,-30, 1>
-    rotate <0,0,0>
-} */ 
+}  
 
 
-// camara sin importancia
-/*
+// camara 2
 camera {
     location  <10, 10, 8.5>
     look_at   <1, 5, 1>
-}
+}  
 */
-light_source {<-280, 200, -200>*1.1 1.0}
-light_source {<-100, 200, -700>*1.1 0.5}
+
+// camara 3
+camera {
+    location  <10, 3, 8.5>
+    look_at   <1, 5, 1>
+    translate <-13, 2, -8.5>
+}
+
+//light_source {<-280, 200, -200>*1.1 1.0}
+//light_source {<-100, 200, -700>*1.1 0.5}
 //light_source {<7, 3.4, 0>*1.1 1.0}  
 //light_source { <-5, 5, 30>*1.1 0.2 }   
 
