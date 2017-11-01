@@ -4,7 +4,10 @@
 #include "terrain_mountain_1.inc"
 #include "terrain_mountain_2.inc"
 #include "texturas.inc"
-#include "textures.inc"
+#include "textures.inc"   
+
+#include "palm-shinji.inc"
+
 //camara 1
 camera {
     location  <10, 3, 8.5>
@@ -160,8 +163,6 @@ box {
    
   
          
-   
-  
 // Arena
 difference {    
     object { O_Sand }
@@ -169,7 +170,7 @@ difference {
     rotate <0, 45, 0>
 }                 
 
-
+ 
 // Mountain
 difference {    
     object { O_Mountain_1 }
@@ -184,4 +185,36 @@ difference {
     translate <-60, -20, -300>
     scale <11, 1.4, 1>  
     rotate <0, 45, 0>
-}            
+}     
+
+
+// Palms
+#declare LEAVES = object {
+    palm_13_leaves   
+    pigment { color rgb <34/250, 139/250, 34/250> }
+}
+
+#declare STEMS = object {
+    palm_13_stems
+    pigment { color rgb <63/255, 42/255, 20/255> }
+}
+
+#declare TREE = union {
+    object { LEAVES }
+    object { STEMS }
+}
+                 
+
+// Shinji
+object { 
+    TREE
+    translate <-2, -5, 2.5> 
+}  
+
+// Asuka
+object { 
+    TREE 
+    rotate <0, 180, 0>
+    scale<0.8, 0.5, 0.8>
+    translate <1, -3, -1.5> 
+}                 
