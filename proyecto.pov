@@ -2,6 +2,7 @@
 #include "colors.inc"
 #include "terrain_sand.inc" 
 #include "terrain_mountain_1.inc"
+#include "terrain_mountain_2.inc"
 #include "texturas.inc"
 #include "textures.inc"
 //camara 1
@@ -174,5 +175,13 @@ difference {
     object { O_Mountain_1 }
     translate <0, -15, -500>
     scale <5, 2, 1>  
+    rotate <0, 45, 0>
+}
+
+// Mountain
+difference {    
+    object { O_Mountain_2 }
+    translate <-55, -20, -220>
+    scale <7, .90, 1>  
     rotate <0, 45, 0>
 }            

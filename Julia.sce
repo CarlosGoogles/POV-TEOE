@@ -1,4 +1,6 @@
 
+// Based on the algorithm explained here:
+//      http://lodev.org/cgtutor/juliamandelbrot.html
 function CANT = doJulia(xsize, ysize, iterations, cr, ci)
     Z = zeros(xsize, ysize, 2);
     CANT = zeros(xsize, ysize);
@@ -25,7 +27,7 @@ function CANT = doJulia(xsize, ysize, iterations, cr, ci)
     end
 endfunction
 
-// https://wiki.scilab.org/MandelbrotSet-NaiveVsVectorized
+// Got the function from: https://wiki.scilab.org/MandelbrotSet-NaiveVsVectorized
 function plotFractal(R,cmax)
     f=scf();
     f.color_map = jetcolormap(cmax);
