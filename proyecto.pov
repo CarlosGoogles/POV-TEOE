@@ -181,7 +181,7 @@ difference {
 // Mountain
 difference {    
     object { O_Mountain_2 }
-    translate <-55, -20, -220>
-    scale <7, .90, 1>  
+    translate <-60, -20, -300>
+    scale <11, 1.4, 1>  
     rotate <0, 45, 0>
 }            
