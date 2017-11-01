@@ -45,7 +45,7 @@ void solve(string sObject, string sTexture) {
     cout << "#include \"texturas.inc\"" << endl << endl;
     cout << "#declare " << sObject << " = merge {"  << endl;
     FOR(i, 0, n-1) {
-        FOR(j, 0, m-1) {
+        FOR(j, 0, m/2-1) {
             cout << "\ttriangle {" << endl;
             genPoints1(i, j);
             cout << "\t\ttexture { " << sTexture << " }" << endl;
