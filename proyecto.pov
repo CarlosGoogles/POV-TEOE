@@ -8,7 +8,7 @@
 camera {
     location  <10, 3, 8.5>
     look_at   <1, 5, 1>
-} 
+}
 
 //camara 2
 /*camera {
@@ -25,7 +25,8 @@ camera {
     look_at   <1, 5, 1>
 }
 */
-light_source {<-300, 600, -200>*1.1 1.0}
+light_source {<-280, 200, -200>*1.1 1.0}
+light_source {<-100, 200, -700>*1.1 0.5}
 //light_source {<7, 3.4, 0>*1.1 1.0}  
 //light_source { <-5, 5, 30>*1.1 0.2 }   
 
@@ -79,6 +80,7 @@ sphere {
     material {   
         texture{ T_Water}
     }
+    interior { ior 1.3 }
 }  
   
 
