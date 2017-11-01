@@ -25,9 +25,8 @@ camera {
     look_at   <1, 5, 1>
 }
 */
-
-
-//light_source { <-700, 15, -600>*1.1 1.0 }  
+light_source {<-300, 600, -200>*1.1 1.0}
+//light_source {<7, 3.4, 0>*1.1 1.0}  
 //light_source { <-5, 5, 30>*1.1 0.2 }   
 
 
