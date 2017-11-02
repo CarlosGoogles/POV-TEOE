@@ -16,6 +16,8 @@ Files:
 
 - matrix_sand.in and Matrix_Sand_2.in are height matrixes for the sand. We used Matrix_Sand_2.in since it was a larger matrix
 
+- matrix_mountain_1.in is the height matrix for the mountain.
+
 - Mandelbrot.sce is an example we got from the internet. We didn't use it at all.
 
 - genTerrain.cpp is the file that generates the .inc file of the object. Used to generate mountains and sand.
